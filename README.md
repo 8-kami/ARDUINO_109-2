@@ -75,5 +75,5 @@ for (int j=0;j<4;j++){
 }
 ```
 
-電路圖如下：
+結果圖如下：
 ![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210302_2.jpg) </p>
