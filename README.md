@@ -31,4 +31,4 @@ for(int i=2; i<9; i++)
 ```
 
 電路圖如下：
-![image]() </p>
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210302_1.jpg) </p>
