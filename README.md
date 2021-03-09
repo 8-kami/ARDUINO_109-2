@@ -78,3 +78,72 @@ for (int j=0;j<4;j++){
 
 結果圖如下：
 ![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210302_2.jpg) </p>
+
+__2021.3.2__ </p>
+
+__第二個程式　功能：操控LCD顯示器__ </p>
+功能包括
+1自製圖形
+2顯示blink閃爍及Cursor底線
+3按鈕控制圖形向右移
+4按鈕控制圖形向左移
+```c++
+
+// include the library code:
+#include <LiquidCrystal.h>
+
+// initialize the library by associating any needed LCD interface pin
+// with the arduino pin number it is connected to
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+byte smiley[8] = {
+  B00000,
+  B10001,
+  B00000,
+  B00000,
+  B11111,
+  B01110,
+  B00000,
+};
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.createChar(0, smiley);
+  lcd.begin(16, 2);  
+  lcd.write(byte(0));
+  lcd.setCursor(0, 1); 
+  lcd.blink(); 
+  pinMode(6, INPUT);
+  pinMode(7, INPUT);
+  digitalWrite(6, HIGH);  
+  digitalWrite(7, HIGH);  
+  lcd.noCursor();delay(500);lcd.cursor();delay(500);
+
+}
+
+void loop() {
+
+  if(digitalRead(6)==LOW){
+      while(digitalRead(6)==LOW);{delay(10);}
+      lcd.scrollDisplayRight();
+    }
+  if(digitalRead(7)==LOW){
+      while(digitalRead(7)==LOW);{delay(10);}
+      lcd.scrollDisplayLeft();
+    }  
+  
+
+}
+
+
+```
+
+
+結果圖如下：
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210309_0.jpg) </p>
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210309_1.jpg) </p>
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210309_2.jpg) </p>
+
+__2021.3.9__ </p>
