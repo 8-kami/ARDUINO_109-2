@@ -149,7 +149,7 @@ void loop() {
 __2021.3.9__ </p>
 
 __第三個程式　功能：以HT6751馬達操控風扇，馬力分為三段__ </p>
-
+各馬力之間有停頓 </p>
 ```c++
 int a;
 void setup() {
@@ -190,3 +190,30 @@ void loop() {
 ```
 電路圖如下：
 ![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210316_0.gif) </p>
+
+各馬力之間無停頓 </p>
+```c++
+int a;
+void setup() {
+  pinMode(5,OUTPUT); //IN1
+  pinMode(6,OUTPUT); //IN2
+  
+}
+
+void loop() {
+  for (int i=0;i<3;i++)
+  {
+    a= a + 95;
+    if (a > 255) {a=255;};
+
+    analogWrite(5,a);
+    analogWrite(6,LOW);
+    delay(5000);
+  };
+  if (a >= 255) {a=0;};
+
+}
+
+```
+電路圖如下：
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210316_1.gif) </p>
