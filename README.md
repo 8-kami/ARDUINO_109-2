@@ -217,3 +217,54 @@ void loop() {
 ```
 電路圖如下：
 ![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210316_1.gif) </p>
+
+*按鈕控制馬力、風扇開關* </p>
+```c++
+int a=100;
+int b=0;
+void setup() {
+  Serial.begin(9600);
+  pinMode(2,INPUT);
+  pinMode(3,INPUT);
+  pinMode(4,INPUT);
+  digitalWrite(4, HIGH);  
+  digitalWrite(2, HIGH);  
+  digitalWrite(3, HIGH);  
+  pinMode(5,OUTPUT); //IN1
+  pinMode(6,OUTPUT); //IN2
+  
+}
+void motor(int a){
+    analogWrite(5,a);
+    analogWrite(6,LOW);
+  }
+void loop() {
+  if (digitalRead(4)==LOW)
+  {
+    while (digitalRead(4)==LOW);
+    b=(b+1)%2;
+  }
+  switch(b)
+  {
+    case 0:
+    {motor(0);break;}
+    case 1:
+    {motor(a);break;}
+  }
+  if (digitalRead(2)==LOW)
+  {
+    while (digitalRead(2)==LOW);
+    a= a + 35; 
+    if (a >= 255) {a=255;}
+  }
+  if (digitalRead(3)==LOW)
+  {
+    while (digitalRead(3)==LOW);
+    a= a - 35; 
+    if (a <= 100) {a=100;}
+  }
+  Serial.println(a);
+}
+```
+電路圖如下：
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210316_2.gif) </p>
