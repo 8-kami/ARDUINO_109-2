@@ -189,4 +189,4 @@ void loop() {
 }
 ```
 電路圖如下：
-![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/210316_0.gif) </p>
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210316_0.gif) </p>
