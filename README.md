@@ -147,3 +147,44 @@ void loop() {
 ![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210309_2.jpg) </p>
 
 __2021.3.9__ </p>
+
+__第三個程式　功能：以HT6751馬達操控風扇，馬力分為三段__ </p>
+
+```c++
+int a;
+void setup() {
+  pinMode(5,OUTPUT); //IN1
+  pinMode(6,OUTPUT); //IN2
+  
+}
+
+void loop() {
+  for (int i=0;i<3;i++)
+  {
+    a= a + 100;
+    if (a > 255) {a=255;};
+    analogWrite(5,HIGH);
+    analogWrite(6,HIGH);
+    delay(3000);
+    analogWrite(5,a);
+    analogWrite(6,LOW);
+    delay(3000);
+  };
+  if (a >= 255) {a=0;};
+  
+  /*
+  digitalWrite(5,HIGH); //正轉
+  digitalWrite(6,LOW);
+  delay(5000);
+  digitalWrite(5,LOW); //逆轉
+  digitalWrite(6,HIGH);
+  delay(5000);
+  digitalWrite(5,LOW); //STANDBY
+  digitalWrite(6,LOW);
+  delay(5000);
+  digitalWrite(5,HIGH); //煞車
+  digitalWrite(6,HIGH);
+  delay(5000);
+  */
+}
+```
