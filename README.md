@@ -270,7 +270,7 @@ void loop() {
 ![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210316_2.gif) </p>
 __2021.3.16__ </p>
 
-__第四個程式　功能：以溫溼度感測器操控嗡鳴器 __ </p>
+__第四個程式　功能：以溫溼度感測器DHT22操控嗡鳴器 __ </p>
 ```c++
 // DHT Temperature & Humidity Sensor
 // Unified Sensor Library Example
