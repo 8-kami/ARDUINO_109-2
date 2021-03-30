@@ -368,3 +368,6 @@ void loop() {
   }
 }
 ```
+
+電路圖如下：
+![image](https://github.com/8-kami/ARDUINO_109-2/blob/main/20210330_0.jpg) </p>
